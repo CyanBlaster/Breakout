@@ -3,33 +3,17 @@
 [ext_resource type="Script" uid="uid://cfbi6mq6siwr8" path="res://Scenes/block.gd" id="1_8o1l4"]
 [ext_resource type="Texture2D" uid="uid://bx86461glea4r" path="res://Sprites/icon.svg" id="1_im0tn"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8o1l4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o1l4"]
-size = Vector2(81, 21)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2iur"]
-size = Vector2(78, 18)
+size = Vector2(101.625, 22)
 
-[node name="block" type="Node2D" unique_id=365465131]
-
-[node name="block" type="StaticBody2D" parent="." unique_id=1691782023]
-physics_material_override = SubResource("PhysicsMaterial_8o1l4")
+[node name="block" type="StaticBody2D" unique_id=421257657 groups=["bricks"]]
 script = ExtResource("1_8o1l4")
 
-[node name="Sprite2D" type="Sprite2D" parent="block" unique_id=1219076358]
-position = Vector2(31, 0)
-scale = Vector2(0.6367188, 0.1640625)
-texture = ExtResource("1_im0tn")
-
-[node name="Area2D" type="Area2D" parent="block/Sprite2D" unique_id=684407483]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="block/Sprite2D/Area2D" unique_id=557052202]
-scale = Vector2(1.570552, 6.095238)
-shape = SubResource("RectangleShape2D_8o1l4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="block" unique_id=892333299]
-position = Vector2(31, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233946039]
+position = Vector2(-8.8125, 0)
 shape = SubResource("RectangleShape2D_c2iur")
 
-[connection signal="body_entered" from="block/Sprite2D/Area2D" to="block" method="_on_area_2d_body_entered"]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1219076358]
+position = Vector2(-8.500001, 0)
+scale = Vector2(0.77343744, 0.1640625)
+texture = ExtResource("1_im0tn")

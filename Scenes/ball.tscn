@@ -6,15 +6,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
 radius = 37.01351
 
-[node name="Ball" type="Node2D" unique_id=117269277]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1395036742]
+[node name="ball" type="CharacterBody2D" unique_id=285526337]
 script = ExtResource("1_ij5cq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1797398004]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797398004]
 shape = SubResource("CircleShape2D_cbx31")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1110831572]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1110831572]
 texture = ExtResource("1_d60mj")
 region_enabled = true
 region_rect = Rect2(0, 0, 100, 100)

@@ -1,20 +1,45 @@
 [gd_scene format=3 uid="uid://ddsst4xbib5l1"]
 
 [ext_resource type="Texture2D" uid="uid://bx86461glea4r" path="res://Sprites/icon.svg" id="1_b1vw1"]
+[ext_resource type="Script" uid="uid://cxu0n8nc68fic" path="res://Scenes/main_screen.gd" id="1_qm5cq"]
 [ext_resource type="PackedScene" uid="uid://bfy31wn621ob1" path="res://Scenes/paddle.tscn" id="2_wi85j"]
+[ext_resource type="Script" uid="uid://s056q5k6uhgl" path="res://Scenes/defeat.gd" id="3_salsw"]
 [ext_resource type="PackedScene" uid="uid://b5euf3h358583" path="res://Scenes/ball.tscn" id="3_wi85j"]
-[ext_resource type="PackedScene" uid="uid://c2kylx2p18g63" path="res://Scenes/block.tscn" id="4_y1wm0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4el"]
-size = Vector2(1165, 51)
+[ext_resource type="Script" uid="uid://dn8y32x2r4emo" path="res://Scenes/label.gd" id="5_qm5cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0p2i"]
 size = Vector2(50.25, 648)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a4el"]
+size = Vector2(1165, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sclt"]
 size = Vector2(1155, 27)
 
 [node name="Node2D" type="Node2D" unique_id=650036331]
+script = ExtResource("1_qm5cq")
+
+[node name="Wall 1" type="StaticBody2D" parent="." unique_id=1892892575]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall 1" unique_id=287645446]
+position = Vector2(25.875, 320)
+shape = SubResource("RectangleShape2D_w0p2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall 1" unique_id=1333093585]
+position = Vector2(32, 321.5)
+scale = Vector2(0.421875, 5.195312)
+texture = ExtResource("1_b1vw1")
+
+[node name="Wall 2" type="StaticBody2D" parent="." unique_id=1990103827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall 2" unique_id=1166612677]
+position = Vector2(1133, 322)
+shape = SubResource("RectangleShape2D_w0p2i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall 2" unique_id=2075012411]
+position = Vector2(1131, 326)
+scale = Vector2(0.421875, 5.15625)
+texture = ExtResource("1_b1vw1")
 
 [node name="Wall 3" type="StaticBody2D" parent="." unique_id=1762178128]
 
@@ -27,51 +52,23 @@ position = Vector2(576.5, 13.5)
 scale = Vector2(9.1484375, 0.3671875)
 texture = ExtResource("1_b1vw1")
 
-[node name="Wall 2" type="StaticBody2D" parent="." unique_id=1990103827]
+[node name="Defeat" type="Area2D" parent="." unique_id=1976548037]
+script = ExtResource("3_salsw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall 2" unique_id=1166612677]
-position = Vector2(1133, 322)
-shape = SubResource("RectangleShape2D_w0p2i")
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall 2" unique_id=2075012411]
-position = Vector2(1131, 323)
-scale = Vector2(0.421875, 5.109375)
-texture = ExtResource("1_b1vw1")
-
-[node name="Paddle" parent="." unique_id=889561999 instance=ExtResource("2_wi85j")]
-position = Vector2(779, 546)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1976548037]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=262995891]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Defeat" unique_id=262995891]
 position = Vector2(577, 641.5)
 shape = SubResource("RectangleShape2D_4sclt")
 
-[node name="Wall 1" type="StaticBody2D" parent="." unique_id=1892892575]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall 1" unique_id=287645446]
-position = Vector2(25.875, 320)
-shape = SubResource("RectangleShape2D_w0p2i")
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall 1" unique_id=1333093585]
-position = Vector2(32, 316.00003)
-scale = Vector2(0.421875, 5.109375)
-texture = ExtResource("1_b1vw1")
-
 [node name="Ball" parent="." unique_id=117269277 instance=ExtResource("3_wi85j")]
-position = Vector2(629, 345)
+position = Vector2(570, 433)
 
-[node name="block" parent="." unique_id=1583465721 instance=ExtResource("4_y1wm0")]
-position = Vector2(144, 147)
+[node name="Paddle" parent="." unique_id=312043175 instance=ExtResource("2_wi85j")]
+position = Vector2(572, 573)
 
-[node name="block2" parent="." unique_id=266943622 instance=ExtResource("4_y1wm0")]
-position = Vector2(925, 138)
-
-[node name="block3" parent="." unique_id=1082656801 instance=ExtResource("4_y1wm0")]
-position = Vector2(323, 146)
-
-[node name="block4" parent="." unique_id=693895912 instance=ExtResource("4_y1wm0")]
-position = Vector2(736, 142)
-
-[node name="block5" parent="." unique_id=1258551048 instance=ExtResource("4_y1wm0")]
-position = Vector2(543, 142)
+[node name="Label" type="Label" parent="." unique_id=1000387870]
+offset_left = 74.0
+offset_top = 46.0
+offset_right = 122.0
+offset_bottom = 69.0
+text = "Score:"
+script = ExtResource("5_qm5cq")
