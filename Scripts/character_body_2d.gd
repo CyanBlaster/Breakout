@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 700.0
 const JUMP_VELOCITY = -400.0
 
 var detect = 1
@@ -30,3 +30,10 @@ func _physics_process(_delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(area.name == "Area2D"):
 		detect = 0
+
+
+
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	pass
+	#print("ow")
+	#velocity.y *= -1
