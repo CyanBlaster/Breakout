@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://76cs0ras3brk"]
+
+[ext_resource type="Script" uid="uid://uopjiol76136" path="res://Scenes/tough_block.gd" id="1_0xdr3"]
+[ext_resource type="Texture2D" uid="uid://bx86461glea4r" path="res://Sprites/icon.svg" id="2_pv4bc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xprvq"]
+size = Vector2(139, 32)
+
+[node name="tough block" type="StaticBody2D" unique_id=1168910265 groups=["bricks"]]
+script = ExtResource("1_0xdr3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1624717944]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_xprvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=913837878]
+position = Vector2(-0.5, 2)
+scale = Vector2(1.0859375, 0.25)
+texture = ExtResource("2_pv4bc")

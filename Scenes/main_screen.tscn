@@ -65,10 +65,14 @@ position = Vector2(570, 433)
 [node name="Paddle" parent="." unique_id=312043175 instance=ExtResource("2_wi85j")]
 position = Vector2(572, 573)
 
-[node name="Label" type="Label" parent="." unique_id=1000387870]
+[node name="Score Tracker" type="Label" parent="." unique_id=1000387870]
 offset_left = 74.0
 offset_top = 46.0
 offset_right = 122.0
 offset_bottom = 69.0
 text = "Score:"
 script = ExtResource("5_qm5cq")
+
+[node name="Label" type="Label" parent="." unique_id=1434995024]
+offset_right = 40.0
+offset_bottom = 23.0

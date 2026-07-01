@@ -1,9 +1,9 @@
-extends StaticBody2D
+extends BaseBrick
 
-class_name BaseBrick
 
-var points = 100
-var health = 1
+func _ready() -> void:
+	points = 300
+	health = 3
 
 func take_damage():
 	health -= 1

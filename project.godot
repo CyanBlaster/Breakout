@@ -27,6 +27,10 @@ globals="*uid://c3mumcum60sod"
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
+[global_group]
+
+bricks=""
+
 [input]
 
 Left={
