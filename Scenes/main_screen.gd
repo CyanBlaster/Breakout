@@ -21,3 +21,8 @@ func _ready():
 			add_child(instance)
 	globals.blocks_left = bricks
 	bricks = 0
+	
+func _process(_delta: float) -> void:
+	if(globals.balls <= 0):
+		queue_free()
+		get_tree().change_scene_to_file("res://Scenes/lose_screen.tscn")

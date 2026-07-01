@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://s056q5k6uhgl" path="res://Scenes/defeat.gd" id="3_salsw"]
 [ext_resource type="PackedScene" uid="uid://b5euf3h358583" path="res://Scenes/ball.tscn" id="3_wi85j"]
 [ext_resource type="Script" uid="uid://dn8y32x2r4emo" path="res://Scenes/label.gd" id="5_qm5cq"]
+[ext_resource type="Script" uid="uid://bmuynhn6xcs0b" path="res://Scenes/Ball_Tracker.gd" id="7_heolw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0p2i"]
 size = Vector2(50.25, 648)
@@ -74,5 +75,9 @@ text = "Score:"
 script = ExtResource("5_qm5cq")
 
 [node name="Label" type="Label" parent="." unique_id=1434995024]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 264.0
+offset_top = 43.0
+offset_right = 353.0
+offset_bottom = 66.0
+text = "Ball tracker"
+script = ExtResource("7_heolw")

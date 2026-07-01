@@ -2,12 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bgoeyvsglyqcv" path="res://Sprites/water_ball_mugen_sprite_sheet_nzc__by_boltanim_dhl0dp2-fullview.png" id="1_d60mj"]
 [ext_resource type="Script" uid="uid://cob7ym46d5ehu" path="res://Scenes/ball.gd" id="1_ij5cq"]
+[ext_resource type="AudioStream" uid="uid://6vftctq24d1q" path="res://Audio/mario-block-break_xmri4Cz.mp3" id="3_376qj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbx31"]
 radius = 37.01351
 
-[node name="ball" type="CharacterBody2D" unique_id=285526337]
+[node name="ball" type="CharacterBody2D" unique_id=285526337 node_paths=PackedStringArray("sound")]
 script = ExtResource("1_ij5cq")
+sound = NodePath("AudioStreamPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797398004]
 shape = SubResource("CircleShape2D_cbx31")
@@ -16,3 +18,6 @@ shape = SubResource("CircleShape2D_cbx31")
 texture = ExtResource("1_d60mj")
 region_enabled = true
 region_rect = Rect2(0, 0, 100, 100)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=230061682]
+stream = ExtResource("3_376qj")

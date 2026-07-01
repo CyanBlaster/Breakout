@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cbti7kj3vqdkd"]
+
+[ext_resource type="Script" uid="uid://eau0n0ja0ww7" path="res://Scenes/lose_screen.gd" id="1_488pv"]
+[ext_resource type="Texture2D" uid="uid://q61mpjknt2yq" path="res://Sprites/$_57.jpeg" id="2_go37l"]
+
+[node name="lose_screen" type="Node2D" unique_id=591585939]
+script = ExtResource("1_488pv")
+
+[node name="Label" type="Label" parent="." unique_id=1378733986]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1210954814]
+position = Vector2(572.00006, 325.00003)
+scale = Vector2(0.7396061, 0.73960614)
+texture = ExtResource("2_go37l")

@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krcey"]
 size = Vector2(128, 58)
 
-[node name="Paddle" type="CharacterBody2D" unique_id=312043175]
+[node name="Paddle" type="CharacterBody2D" unique_id=312043175 node_paths=PackedStringArray("sound")]
 script = ExtResource("1_krcey")
+sound = NodePath("AudioStreamPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1892628330]
 position = Vector2(0, 0.5)
@@ -16,3 +17,5 @@ texture = ExtResource("1_0sbc1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=625861769]
 shape = SubResource("RectangleShape2D_krcey")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2037387773]

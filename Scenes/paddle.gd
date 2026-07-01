@@ -5,6 +5,8 @@ const SPEED = 900.0
 const JUMP_VELOCITY = -400.0
 
 
+
+@export var sound : AudioStreamPlayer
 @onready var y = position.y
 var detect = 1
 
@@ -20,6 +22,7 @@ func _physics_process(_delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
+		sound.play()
 		velocity.x = direction * SPEED * detect
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

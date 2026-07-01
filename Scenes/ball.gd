@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@export var sound : AudioStreamPlayer
+
 func _ready():
 	velocity = Vector2(1, 1).normalized() * SPEED
 	#print(velocity)
@@ -14,9 +16,8 @@ func _physics_process(delta: float) -> void:
 
 	if collision:
 		var collider = collision.get_collider()
-		#print('son here 2', collider)
 		if collider.is_in_group('bricks'):
-			#print('son here 3')
+			sound.play()
 			collider.take_damage()
 		#var reflect = collision.get_remainder().bounce(collision.get_normal())
 		velocity = velocity.bounce(collision.get_normal())
@@ -37,5 +38,6 @@ func _physics_process(delta: float) -> void:
 
 	#print(velocity)
 	if(position.y >= 700):
+		globals.balls -= 1
 		position.y = 450
 		position.x = 500
